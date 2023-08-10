@@ -1,0 +1,29 @@
+{
+  "name": "ccip-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "etsc",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zexuz/ccip-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zexuz/ccip-bot/issues"
+  },
+  "homepage": "https://github.com/Zexuz/ccip-bot#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "esbuild": "^0.19.0",
+    "esbuild-node-tsc": "^2.0.5",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
+  }
+}
