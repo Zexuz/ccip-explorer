@@ -1,0 +1,14 @@
+{
+  "sourceChainSelector": "16015286601757825753",
+  "sequenceNumber": "6489",
+  "feeTokenAmount": "111410750303275618",
+  "sender": "0x7a7783e6073175f58db4d5F8bB40Ea44065246DB",
+  "nonce": "4495",
+  "gasLimit": "200000",
+  "strict": false,
+  "receiver": "0xc1f01A6d0E8382F2C5D394923A7e79693354934b",
+  "data": "0x00000000000000000000000000000000000000000000000000000000000013c5",
+  "tokenAmounts": [],
+  "feeToken": "0x779877A7B0D9E8603169DdbD7836e478b4624789",
+  "messageId": "0x8ff5f84714a035c7d92440016d38cd35567eaf519634d143e9f6cb48c76de1d7"
+}
