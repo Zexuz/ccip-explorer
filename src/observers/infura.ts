@@ -1,5 +1,5 @@
 import {ethers} from 'ethers';
-import {getOrThrowEnv, saveToFileWithRandomName} from "../io/utils";
+import {getOrThrowEnv} from "../io/utils";
 import * as console from "console";
 import {saveToMongoDb} from "../mongodb";
 
@@ -174,16 +174,13 @@ const listenToEvents = (con: ILane, provider: any) => {
     for (const eventName of con.events) {
         console.log(`Listening to event ${eventName}, on contract ${address}, network ${con.source}`);
         contract.on(eventName, async (data: EVM2EVMMessage) => {
-            console.log("Recevied ", eventName);
             try {
                 const message = EVM2EVMMessageFactory(data);
                 const event = createEvent(message, con, eventName);
-                const jsonString = JSON.stringify(message, (_, value) => typeof value === 'bigint' ? value.toString() : value);
-                await saveToFileWithRandomName(`${Date.now()}-${con.source}-${con.destination}-${eventName}`, jsonString);
                 await saveToMongoDb(event);
-                console.log(`Saved file for event ${eventName}, data: ${jsonString}`);
+                console.log(`Saved file for event ${eventName}, timestamp: ${Date.now().toString()}`);
             } catch (e) {
-                console.log(`Error saving file for event ${eventName}, error: ${e}`);
+                console.log(`Error saving file for event ${eventName}, error: ${e}, JSON: ${JSON.stringify(data)}`);
             }
         });
     }
