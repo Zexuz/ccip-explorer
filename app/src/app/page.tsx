@@ -9,7 +9,7 @@ async function getData() {
   try {
     return await db.collection('events')
                    .find()
-                   .sort({timestamp: 1})
+                   .sort({timestamp: -1})
                    .limit(5)
                    .toArray();
   } catch (error) {
