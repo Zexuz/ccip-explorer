@@ -3,7 +3,11 @@ import TransactionCard from "@/components/TransactionCard";
 import {connectToDatabase} from "@/lib/mongo";
 
 
-async function getData() {
+import {cache} from 'react'
+
+export const revalidate = 10
+
+const getData = cache(async () => {
   const {db} = await connectToDatabase();
 
   try {
@@ -15,7 +19,7 @@ async function getData() {
   } catch (error) {
     throw new Error('Failed to fetch data')
   }
-}
+});
 
 export default async function Home() {
   const data = await getData()

@@ -1,3 +1,7 @@
 # ccip-explorer
+A copy https://ccip.chain.link/
 
-Just fucking around with CCIP events
+https://ccip-explorer.vercel.app/
+
+## Why
+Trying to understand how the CCIP network works.
