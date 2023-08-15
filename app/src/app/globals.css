@@ -4,9 +4,9 @@
 
 
 :root {
-    --primary-bg: #121212;
-    /*--primary-bg: #7c7c7c;*/
-    --secondary-bg: #1E1E1E;
+    --primary-bg: #252525;         /* Further lightened from #1B1B1B */
+    --secondary-bg: #333333;       /* Further lightened from #282828 */
+    --border-color: #4B4B4B;       /* Further lightened from #3A3A3A */
     --primary-accent: #2A5ADA;
     --secondary-accent: #4A78D4;
     --tertiary-accent: #6A9CE9;
@@ -14,7 +14,6 @@
     --secondary-text: #B0B0B0;
     --error-color: #E57373;
     --success-color: #81C784;
-    --border-color: #2E2E2E;
 }
 
 @media (prefers-color-scheme: dark) {

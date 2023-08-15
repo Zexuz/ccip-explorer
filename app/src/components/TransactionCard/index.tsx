@@ -2,6 +2,7 @@ import {Transaction} from "@/types/transaction";
 import ChainIcon from "@/components/ChainIcon";
 import {formatDate} from "@/utils/date";
 import ChainData from "@/components/ChainData";
+import Link from 'next/link';
 
 export default function TransactionCard({tx}: { tx: Transaction }) {
   return (
@@ -13,7 +14,9 @@ export default function TransactionCard({tx}: { tx: Transaction }) {
 
       {/* Column 1: Transaction ID and Date */}
       <div className="flex-shrink-0 mr-4">
-        <p className="text-xs font-mono mb-2">{tx.id}</p>
+        <Link href={`/msg/${tx.id}`}>
+          <p className="text-xs font-mono mb-2 cursor-pointer hover:underline text-secondary-accent">{tx.id}</p>
+        </Link>
         <p className="text-xs text-gray-600">{formatDate(tx.timestamp)}</p>
       </div>
 

@@ -4,3 +4,4 @@ export interface Chain {
   imgUrl: string
   isTestnet: boolean
 }
+
