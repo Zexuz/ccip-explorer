@@ -18,3 +18,6 @@ Trying to understand how the CCIP network works.
 * Infura
 * Node.js
 * MongoDB
+
+
+https://vercel.com/guides/deploying-pusher-channels-with-vercel
