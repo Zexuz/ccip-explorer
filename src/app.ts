@@ -236,26 +236,6 @@ interface CCIPMessage {
   //
   // console.log(`Total events: ${ccipMessages.length}`);
 
-  const startExpressServer = () => {
-    const app = express()
-    const port = 3001
-
-    app.use(express.json());
-
-    app.get('/api/msg/:msg', async (req: any, res: any) => {
-      const msg = req.params.msg;
-      const message = await getEventWithMessageIdFromMongoDb(msg)
-      res.json({msg: message});
-    });
-
-    app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`)
-    })
-  }
-
-
-  startExpressServer()
-
   return
   const fileService = new FileService();
 

@@ -1,19 +1,18 @@
 import React from 'react';
 import {formatDate} from "@/utils/date";
+import {connectToDatabase} from "@/lib/mongo";
 
 
 async function getData(msgId: string) {
-  const res = await fetch(`http://localhost:3001/api/msg/${msgId}`)
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+  const {db} = await connectToDatabase();
+  const query = {"message.messageId": msgId};
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
+  try {
+    return await db.collection('events')
+                   .findOne(query);
+  } catch (error) {
     throw new Error('Failed to fetch data')
   }
-
-  return res.json()
-            .then((data) => data.msg);
 }
 
 export default async function Page({params}: { params: { slug: string } }) {
